@@ -1,5 +1,5 @@
-services:
-  web:
-    image: httpd:2.4
-    ports:
+services: # コンテナの定義
+  web: # コンテナ名
+    image: httpd:2.4 #使用するイメージの名前を書く
+    ports: # ポート番号
       - "8080:80"
