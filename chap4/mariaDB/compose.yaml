@@ -8,5 +8,5 @@ services:
       MARIADB_PASSWORD: testpass
     volumes:
       - db-data:/var/lib/mysql
-  volumes:
-    db-data:
+volumes:
+  db-data:
