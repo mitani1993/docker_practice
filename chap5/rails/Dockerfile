@@ -1,7 +1,7 @@
 FROM ruby:3.0.4
 RUN apt-get update -qq
-RUN curl -fsSL https://dev.nodesource.com/setup_lts.x | bash - && apt-get install -y nodejs
-RUN npm instal - g yarn
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && apt-get install -y nodejs
+RUN npm install -g yarn
 
 WORKDIR /samplerails
 COPY Gemfile Gemfile.lock /samplerails/
