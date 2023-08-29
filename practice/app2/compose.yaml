@@ -1,0 +1,23 @@
+services:
+  web:
+    image: openjdk:17
+    build: ./spring
+    ports:
+      - "8080:8080"
+      - "5005:5005"
+    tty: true
+    volumes:
+      - ./spring:/srv:cached
+    command: ["sh", "gradlew", "bootRun"]
+    depends_on:
+      - db
+  db:
+    image: postgres:14.2
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./psql:/var/lib/postgresql/data
