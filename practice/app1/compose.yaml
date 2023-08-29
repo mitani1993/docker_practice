@@ -1,12 +1,13 @@
 services:
   web:
     image: openjdk:17
+    build: ./spring
     ports:
       - "8080:8080"
     tty: true
     volumes:
       - ./spring:/srv:cached
-    working_dir: /srv
+    command: ["sh", "gradlew", "bootRun"]
     depends_on:
       - db
   db:
