@@ -16,6 +16,7 @@ public class AppApplication {
 
   @RequestMapping("/")
   public String hello() {
-    return "Hello Spring Boot on Docker!!!";
+    System.out.println("hohoo");
+    return "Hello Spring Boot on Docker2!!!";
   }
 }

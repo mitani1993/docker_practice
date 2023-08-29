@@ -4,6 +4,7 @@ services:
     build: ./spring
     ports:
       - "8080:8080"
+      - "5005:5005"
     tty: true
     volumes:
       - ./spring:/srv:cached
